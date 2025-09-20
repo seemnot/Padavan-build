@@ -1,6 +1,9 @@
 #修改TNAME: K2P 中的K2P为你需要编译的型号，注意名称要与configs/templates/目录下的名字相同
 name: Build Padavan
-
+- name: Install legacy libs
+  run: |
+    sudo ln -sf /usr/bin/python3 /usr/bin/python
+    sudo apt-get -y install libncurses5-dev libssl1.1 libssl-dev
 on: 
   release:
     types: [published]
